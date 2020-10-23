@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+<!-- authors -->
+<section class="section">
+  <div class="container">
+    <!-- author list -->
+    <div class="row">
+      <!-- author -->
+      {{ range .Data.Pages }}
+      <div class="col-lg-4">
+        {{ .Render "author" }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<!-- /authors -->
+
+{{ end }}
