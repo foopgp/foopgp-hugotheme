@@ -58,13 +58,13 @@
       <div class="col-12 mb-4 content">
         {{ .Content }}
       </div>
-      <!-- teacher -->
+      <!-- member -->
       <div class="col-12">
-        <h5 class="mb-3">{{ i18n "teacher" }}</h5>
-        {{ range where site.RegularPages "Title" (.Params.Teacher | title) }}
+        <h5 class="mb-3">{{ i18n "member" }}</h5>
+        {{ range where site.RegularPages "Title" (.Params.Member | title) }}
         <div class="d-flex justify-content-between align-items-center flex-wrap">
           <div class="media mb-2 mb-sm-0 align-items-center">
-            <img class="mr-4 img-fluid teacher-thumb-sm" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
+            <img class="mr-4 img-fluid member-thumb-sm" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
             <div class="media-body">
               <h4 class="mt-0"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
               {{ .Params.Course }}
