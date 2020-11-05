@@ -4,12 +4,17 @@
 <section class="section bg-cover" data-background="{{ .bg_image | absURL }}">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 col-sm-4 position-relative success-video">
-        <a class="play-btn venobox" href="{{ .video_link | safeURL }}" data-vbtype="video">
-          <i class="ti-control-play"></i>
-        </a>
+      <div class="col-xl-4 col-lg-5 position-relative success-video about_video_box" style="" >
+		<div class="col-12 p-0" style="box-sizing: border-box;">
+		  <img src="{{ .vignette_1 | absURL  }}" width="100%">
+		</div>
+		  <div class="col-12 text-center about_video_btn" style=" width:82px; height:82px; text-align:center; margin-left:auto; margin-right:auto; margin-top:-128px;">
+			<a class="play-btn venobox" href="{{ .video_link | safeURL }}" data-vbtype="video">
+			  <i class="ti-control-play"></i>
+			</a>
+		  </div>
       </div>
-      <div class="col-lg-6 col-sm-8">
+      <div class="col-xl-8 col-lg-7">
         <div class="bg-white p-5">
           <h2 class="section-title">{{ .title | markdownify }}</h2>
           <p>{{ .content | markdownify }}</p>
