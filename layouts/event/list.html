@@ -2,20 +2,34 @@
 <!-- events -->
 <section class="section">
   	<div class="container">
+		
 		<div class="row">
-			<div class="clo-md-6"></div>
-			<div class="clo-md-6">
-				
-			</div>
+		  <div class="col-12">
+			<!-- member category list -->
+			<ul class="list-inline text-center filter-controls mb-5">
+			  <li style="width:auto; min-height:20px; cursor:pointer; display:inline-block; float:right; margin-top:4px; margin-right:10px;" data-filter="all">{{ i18n "all" }}</li>
+			  {{ $categories := slice }}
+			  {{ range .Data.Pages }}
+			  {{ $categories = $categories | append .Params.Event_language }}
+			  {{ end }}
+			  {{ range ( $categories | uniq ) }}
+				  {{ if eq . "fr" }}
+					<li id="events_en" name="events_fr" style="background-image: url('{{ "images/icon_fr.png" | relURL }}'); background-size:cover; width:20px; height:20px; border-radius:10px; cursor:pointer; display:inline-block; float:right; margin-top:4px; margin-right:10px;" data-filter="{{ . | urlize }}"></li>
+				  {{ else if eq . "en"}}
+					<li id="events_en" name="events_en" style="background-image: url('{{ "images/icon_en.png" | relURL }}'); background-size:cover; width:20px; height:20px; border-radius:10px; cursor:pointer; display:inline-block; float:right; margin-top:4px; margin-right:10px;" data-filter="{{ . | urlize }}"></li>
+				  {{ end }}
+
+				  {{ end }}
+			</ul>
+		  </div>
 		</div>
-		<div class="row">
+		
+    	<div class="row filtr-container">
 			<!-- event -->
 			{{ range .Data.Pages }}
-				{{ if (isset .Params "event_language") }}
-				<div class="col-lg-4 col-sm-6 mb-5" id="event_{{ .Params.id }}">
+				<div data-category="{{ .Params.Event_language | urlize }}" class="col-lg-4 col-sm-6 filtr-item">
 					{{ .Render "event" }}
 				</div>
-				{{ end }}
 			{{ end }}
 		</div>
   	</div>
