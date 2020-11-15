@@ -43,7 +43,7 @@
             {{ range site.Menus.main }}
             {{ if .HasChildren }}
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="{{ .URL | absLangURL  }}" >
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                 {{ i18n .Name }}
               </a>
               <div class="dropdown-menu">
