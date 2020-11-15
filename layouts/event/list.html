@@ -1,17 +1,24 @@
 {{ define "main" }}
-
 <!-- events -->
 <section class="section">
-  <div class="container">
-    <div class="row">
-      <!-- event -->
-      {{ range .Data.Pages }}
-      <div class="col-lg-4 col-sm-6 mb-5">
-        {{ .Render "event" }}
-      </div>
-      {{ end }}
-    </div>
-  </div>
+  	<div class="container">
+		<div class="row">
+			<div class="clo-md-6"></div>
+			<div class="clo-md-6">
+				
+			</div>
+		</div>
+		<div class="row">
+			<!-- event -->
+			{{ range .Data.Pages }}
+				{{ if (isset .Params "event_language") }}
+				<div class="col-lg-4 col-sm-6 mb-5" id="event_{{ .Params.id }}">
+					{{ .Render "event" }}
+				</div>
+				{{ end }}
+			{{ end }}
+		</div>
+  	</div>
 </section>
 <!-- /events -->
 

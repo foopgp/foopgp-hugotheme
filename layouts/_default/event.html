@@ -1,20 +1,33 @@
-<div class="card border-0 rounded-0 hover-shadow">
-  <div class="card-img position-relative">
-	  <div class="event_image_box" style="">
-    	<a href="{{ .Permalink }}">
-   		 <img class="card-img-top rounded-0" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
-    	</a>
-	  </div>
-	  <div class="card-date">
-		  <span>{{ .Date.Format "02" }}</span><br>{{ .Date.Format "Jan" }}<br>{{ .Date.Format "2006" }}
-	  </div>
-  </div>
-  <div class="card-body">
-    <!-- location -->
-    <p><i class="ti-location-pin text-primary mr-2"></i>{{ .Params.Location | markdownify }}</p>
-    <h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-  </div>
-</div>
+
+
+	<div class="card border-0 rounded-0 hover-shadow" data-lang="{{ .Params.event_language }}">
+	  <div class="card-img position-relative">
+		  <div class="event_image_box" style="">
+			<a href="{{ .Permalink }}">
+			 <img class="card-img-top rounded-0" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
+			</a>
+		  </div>
+		  <div class="card-date">
+			  <span>{{ .Date.Format "02" }}</span><br>{{ .Date.Format "Jan" }}<br>{{ .Date.Format "2006" }}
+		  </div>
+	  	</div>
+		<div class="card-body">
+			<!-- location -->
+			<p><i class="ti-location-pin text-primary mr-2"></i>{{ .Params.Location | markdownify }}</p>
+			<h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4><br>
+			<div style="width: 100%; display:inline-block;">
+				<div style="display: inline-block; float: left; min-height:20px; margin-top: 0px; vertical-align: middle; padding-top: 2px;">LANGUE</div>
+				<div style="display: inline-block; float: left; padding-top: 0px; padding-left: 10px;">
+					{{ if eq .Params.event_language "fr" }}
+						<div style="width: 20px; height: 20px; border-radius: 10px; background-image:url('{{ "images/icon_fr.png" | relURL }}'); background-repeat:no-repeat; background-position:center; background-size:cover;"></div>
+					{{ else if eq .Params.event_language "en" }}
+						<div style="width: 20px; height: 20px; border-radius: 10px; background-image:url('{{ "images/icon_en.png" | relURL }}'); background-repeat:no-repeat; background-position:center; background-size:cover;"></div>
+					{{ end }}
+				</div>
+			</div>
+		</div>
+	</div>
+
 <style type="text/css">
 
 .event_image_box {
