@@ -20,7 +20,6 @@
 
 .navbar-collapse{
   @include desktop {
-    background: $secondary-color;
   }
 }
 
@@ -29,7 +28,6 @@
 
   @include desktop {
     padding-left: 0;
-    background: $secondary-color;
   }
 }
 
