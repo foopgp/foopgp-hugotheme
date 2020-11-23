@@ -1,6 +1,8 @@
 <div class="card p-0 border-primary rounded-0 hover-shadow">
 	<div class="text-center">
+		<a href="{{ .Permalink }}">
   		<img class="card-img-top rounded-0 w-50" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
+		</a>
 	</div>
 	  <div class="card-body">
 		<ul class="list-inline mb-2" style="text-align:center;">
@@ -11,8 +13,5 @@
 			<h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
 		  </center>
 		<p class="card-text mb-4 text-justify" style="text-align: center;">{{ .Summary | truncate 100 }}</p>
-		  <center>
-			<a href="{{ .Permalink }}" class="btn btn-primary btn-sm">{{ i18n "read_more"}}</a>
-		  </center>
 	  </div>
 </div>
