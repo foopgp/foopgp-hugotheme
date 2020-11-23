@@ -5,12 +5,20 @@
 
 <style type="text/css">
 @media (min-width: 200px) and (max-width: 1199px) {
+	#our_value_box_img {
 		height:850px;
 		min-height: 850px;
 		}
+	#against_value_box_img {
+		height:850px;
+		min-height: 850px;
 	}
 @media (min-width: 1200px) and (max-width: 1399px) {
 	#our_value_box_img {
+		height:750px;
+		min-height: 750px;
+		}
+	#against_value_box_img {
 		height:750px;
 		min-height: 750px;
 		}
@@ -20,15 +28,27 @@
 		height: 650px;
 		min-height: 650px;
 		}
+	#against_value_box_img {
+		height: 650px;
+		min-height: 650px;
+		}
 	}
 @media (min-width: 1600px) and (max-width: 1699px) {
 	#our_value_box_img {
 		height: 650px;
 		min-height: 650px;
 		}
+	#against_value_box_img {
+		height: 650px;
+		min-height: 650px;
+		}
 	}
 @media (min-width: 1700px) {
 	#our_value_box_img {
+		height: 600px;
+		min-height: 600px;
+		}
+	#against_value_box_img {
 		height: 600px;
 		min-height: 600px;
 		}
@@ -127,6 +147,56 @@
 {{ end }}
 {{ end }}
 <!-- /banner-feature -->
+
+
+
+<!-- banner-contre-valeur -->
+{{ if $data.homepage.banner_feature.enable }}
+{{ with $data.homepage.banner_feature }}
+<section class="section" style="">
+  <div class="container">
+    <div class="row">
+	  <div class="col-12" style=" padding-top:0px; text-align: right;">
+		<h2>
+			{{ i18n "title_our_against_values" | humanize}}
+				</h2>
+        <p>{{ i18n "text_our_against_values" | humanize }}</p>
+	  </div>
+	</div>
+  </div>
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-xl-8 col-lg-7 " id="our_value_box_text">
+        <div class="row feature-blocks2 justify-content-between p-5" style="box-sizing:border-box; margin-top:20px;">
+          {{ range .feature_item }}
+          <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
+			<div class="row" style="">
+				<div class="col-sm-3" style="">
+					<i class="{{ .icon }} mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
+				</div>
+				<div class="col-sm-3" style="padding-top:10px; padding-left:14px;">
+					<h3 class="mb-xl-4 mb-lg-3 mb-4">{{ .name | markdownify }}</h3>
+				</div>
+			</div>
+			<div class="w-100">
+				<p style="text-align:justify;">{{ .content | markdownify }}</p>
+			  </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-5" style=" min-height: 450px;" id="against_value_box_img">
+		<div class="row feature-blocks justify-content-between img_box_left p-0" style="height:100%; padding-left: 0px; padding-right: 0px; margin-top: 50px;">
+      	  <div class="w-100" style=" height: 100%; background-size: cover;  background-image: url('{{ .image | absURL }}'); box-sizing: border-box; background-position: top;"></div>
+		</div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}
+{{ end }}
+<!-- /banner-contre-valeur -->
+
 <!-- member -->
 {{ if $data.homepage.blog.enable }}
 <section class="section">
