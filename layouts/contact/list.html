@@ -9,6 +9,7 @@
       </div>
     </div>
     <div class="row">
+{{ if not (eq site.Params.contact_form_action "#") }}
       <div class="col-lg-7 mb-4 mb-lg-0">
         <form action="{{ site.Params.contact_form_action | safeURL }}" method="POST">
           <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name">
@@ -19,6 +20,9 @@
         </form>
       </div>
       <div class="col-lg-5 content">
+{{ else }}
+      <div class="content">
+{{ end }}
         {{ .Content }}
         <a href="tel:{{ site.Params.mobile }}" class="text-color h5 d-block">{{ site.Params.mobile }}</a>
         <a href="mailto:{{ site.Params.email }}" class="mb-5 text-color h5 d-block">{{ site.Params.email }}</a>
