@@ -16,11 +16,7 @@
 		<div style="width: 100%; display:inline-block;">
 			<div style="display: inline-block; float: left; min-height:20px; margin-top: 0px; vertical-align: middle; padding-top: 2px;">{{ i18n "langue" }} </div>
 			<div style="display: inline-block; float: left; padding-top: 0px; padding-left: 10px;">
-				{{ if eq .Params.Lang "fr" }}
-					<div style="width: 20px; height: 20px; border-radius: 10px; background-image:url('{{ "images/icon_fr.png" | relURL }}'); background-repeat:no-repeat; background-position:center; background-size:cover;"></div>
-				{{ else if eq .Params.Lang "en" }}
-					<div style="width: 20px; height: 20px; border-radius: 10px; background-image:url('{{ "images/icon_en.png" | relURL }}'); background-repeat:no-repeat; background-position:center; background-size:cover;"></div>
-				{{ end }}
+					<div style="width: 20px; height: 20px; border-radius: 10px; background-image:url('{{ printf "images/icon_%s.png" .Params.Lang | relURL }}'); background-repeat:no-repeat; background-position:center; background-size:cover;"></div>
 			</div>
 		</div>
 	</div>
