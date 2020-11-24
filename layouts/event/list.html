@@ -10,7 +10,7 @@
 			  <li style="width:auto; min-height:20px; cursor:pointer; display:inline-block; float:right; margin-top:4px; margin-right:10px;" data-filter="all">{{ i18n "all" }}</li>
 			  {{ $categories := slice }}
 			  {{ range .Data.Pages }}
-			  {{ $categories = $categories | append .Params.Event_language }}
+			  {{ $categories = $categories | append .Params.Lang }}
 			  {{ end }}
 			  {{ range ( $categories | uniq ) }}
 				  {{ if eq . "fr" }}
@@ -27,7 +27,7 @@
     	<div class="row filtr-container">
 			<!-- event -->
 			{{ range .Data.Pages }}
-				<div data-category="{{ .Params.Event_language | urlize }}" class="col-lg-4 col-sm-6 filtr-item">
+				<div data-category="{{ .Params.Lang | urlize }}" class="col-lg-4 col-sm-6 filtr-item">
 					{{ .Render "event" }}
 				</div>
 			{{ end }}

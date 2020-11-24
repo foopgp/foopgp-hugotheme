@@ -1,4 +1,4 @@
-<li class="card border-0 rounded-0 hover-shadow" data-lang="{{ .Params.event_language }}">
+<li class="card border-0 rounded-0 hover-shadow" data-lang="{{ .Params.Lang }}">
   <div class="card-img position-relative">
 	  <div class="event_image_box" style="">
 		<a href="{{ .Permalink }}">
@@ -16,9 +16,9 @@
 		<div style="width: 100%; display:inline-block;">
 			<div style="display: inline-block; float: left; min-height:20px; margin-top: 0px; vertical-align: middle; padding-top: 2px;">{{ i18n "langue" }} </div>
 			<div style="display: inline-block; float: left; padding-top: 0px; padding-left: 10px;">
-				{{ if eq .Params.event_language "fr" }}
+				{{ if eq .Params.Lang "fr" }}
 					<div style="width: 20px; height: 20px; border-radius: 10px; background-image:url('{{ "images/icon_fr.png" | relURL }}'); background-repeat:no-repeat; background-position:center; background-size:cover;"></div>
-				{{ else if eq .Params.event_language "en" }}
+				{{ else if eq .Params.Lang "en" }}
 					<div style="width: 20px; height: 20px; border-radius: 10px; background-image:url('{{ "images/icon_en.png" | relURL }}'); background-repeat:no-repeat; background-position:center; background-size:cover;"></div>
 				{{ end }}
 			</div>
