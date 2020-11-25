@@ -70,9 +70,14 @@
       </div>
     </div>
     <!-- event speakers -->
+    {{ if .Params.Speaker }}
     <div class="row">
       <div class="col-12">
+	{{ if gt (len .Params.Speaker) 1 }}
+        <h3 class="mb-4">{{ i18n "event_speakers"}}</h3>
+	{{ else }}
         <h3 class="mb-4">{{ i18n "event_speaker"}}</h3>
+	{{ end }}
       </div>
       <!-- speakers -->
       {{ range .Params.Speaker }}
@@ -86,6 +91,7 @@
         </div>
       </div>
       {{ end }}
+    {{ end }}
       <!-- border -->
       <div class="col-12 mt-4 order-4">
         <div class="border-bottom border-primary"></div>
