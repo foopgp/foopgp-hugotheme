@@ -13,23 +13,18 @@
 		<!-- location -->
 		<p><i class="ti-location-pin text-primary mr-2"></i>{{ .Params.Location | markdownify }}</p>
 		<h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4><br>
-		<div style="width: 100%; display:inline-block;">
-			<div style="display: inline-block; float: left; min-height:20px; margin-top: 0px; vertical-align: middle; padding-top: 2px;">{{ i18n "langue" }} </div>
-			<div style="display: inline-block; float: left; padding-top: 0px; padding-left: 10px;">
-					<div style="width: 20px; height: 20px; border-radius: 10px; background-image:url('{{ printf "images/icon_%s.png" .Params.Lang | relURL }}'); background-repeat:no-repeat; background-position:center; background-size:cover;"></div>
+		<div class="w-100" style="">
+			<div class="article_lang_box" style="">{{ i18n "langue" }}</div>
+			<div class="article_lang_icon_box" style="">
+				<div class="article_lang_icon" style="background-image:url('{{ printf "images/icon_%s.png" .Params.Lang | relURL }}');"></div>
 			</div>
 		</div>
 	</div>
 </li>
 
 <style type="text/css">
-
-.event_image_box {
-	width:275px;
-	height: 105px;
-	display: inline-block;
-	float:right;
-}
+	
+	
  @media (min-width: 200px) and (max-width: 574px) {
 	 
 }
@@ -55,4 +50,5 @@
 		 width: 275px;
 	 }
 }
+	
 </style>
