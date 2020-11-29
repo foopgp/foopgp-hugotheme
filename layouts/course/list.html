@@ -3,15 +3,30 @@
 <!-- courses -->
 <section class="section">
   <div class="container">
-    <!-- course list -->
-    <div class="row justify-content-center">
-      <!-- course item -->
-      {{ range .Data.Pages }}
-      <div class="col-lg-4 col-sm-6 mb-5">
-        {{ .Render "course" }}
-      </div>
-      {{ end }}
-    </div>
+	<div class="row">
+	  <div class="col-12">
+		<!-- member category list -->
+		<ul class="list-inline text-center filter-controls mb-5">
+		  <li style="width:auto; min-height:20px; cursor:pointer; display:inline-block; float:right; margin-top:4px; margin-right:10px;" data-filter="all">{{ i18n "all" }}</li>
+		  {{ $categories := slice }}
+		  {{ range .Data.Pages }}
+		  {{ $categories = $categories | append .Params.Lang }}
+		  {{ end }}
+		  {{ range ( $categories | uniq ) }}
+			<li id="course" name="course_{{ . }}" style="background-image: url('{{ printf "images/icon_%s.png" . | relURL }}'); background-size:cover; width:20px; height:20px; border-radius:10px; cursor:pointer; display:inline-block; float:right; margin-top:4px; margin-right:10px;" data-filter="{{ . | urlize }}"></li>
+		  {{ end }}
+		</ul>
+	  </div>
+	</div>
+	<!-- course list -->
+	<div class="row filtr-container">
+	  <!-- course item -->
+	  {{ range .Data.Pages }}
+	  <div data-category="{{ .Params.Lang | urlize }}" class="col-lg-4 col-sm-6 filtr-item">
+		{{ .Render "course" }}
+	  </div>
+	  {{ end }}
+	</div>
     <!-- /course list -->
   </div>
 </section>

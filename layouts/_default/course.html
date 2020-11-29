@@ -1,4 +1,4 @@
-<div class="card p-0 border-primary rounded-0 hover-shadow">
+<div class="card p-0 border-primary rounded-0 hover-shadow" data-lang="{{ .Params.Lang }}">
 	<div class="text-center">
 		<a href="{{ .Permalink }}">
   		<img class="card-img-top rounded-0 w-50" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
@@ -12,6 +12,39 @@
 		  <center>
 			<h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
 		  </center>
-		<p class="card-text mb-4 text-justify" style="text-align: center;">{{ .Summary | truncate 100 }}</p>
+		<p class="card-text mb-4 text-center" style="">{{ .Summary | truncate 100 }}</p>
+		<div class="w-100" style="">
+			<div class="article_lang_box" style="">{{ i18n "langue" }}</div>
+			<div class="article_lang_icon_box" style="">
+				<div class="article_lang_icon" style="background-image:url('{{ printf "images/icon_%s.png" .Params.Lang | relURL }}');"></div>
+			</div>
+		</div>
 	  </div>
 </div>
+<style type="text/css">
+ @media (min-width: 200px) and (max-width: 574px) {
+	 
+}
+ @media (min-width: 575px) and (max-width: 769px) {
+	 .event_image_box {
+		 width: 170px;
+	 }
+}
+ @media (min-width: 770px) and (max-width: 989px) {
+	 .event_image_box {
+		 width: 265px;
+	 }
+}
+ @media (min-width: 990px) and (max-width: 1199px) {
+	 .event_image_box {
+		 width: 225px;
+	 }
+	 
+}
+
+ @media (min-width: 1200px) {
+	 .event_image_box {
+		 width: 275px;
+	 }
+}
+</style>
