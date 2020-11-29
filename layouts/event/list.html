@@ -6,13 +6,13 @@
 		  <div class="col-12">
 			<!-- member category list -->
 			<ul class="list-inline text-center filter-controls mb-5">
-			  <li style="width:auto; min-height:20px; cursor:pointer; display:inline-block; float:right; margin-top:4px; margin-right:10px;" data-filter="all">{{ i18n "all" }}</li>
+			  <li class="article_lang_all" style="" data-filter="all">{{ i18n "all" }}</li>
 			  {{ $categories := slice }}
 			  {{ range .Data.Pages }}
 			  {{ $categories = $categories | append .Params.Lang }}
 			  {{ end }}
 			  {{ range ( $categories | uniq ) }}
-				<li id="events" name="events_{{ . }}" style="background-image: url('{{ printf "images/icon_%s.png" . | relURL }}'); background-size:cover; width:20px; height:20px; border-radius:10px; cursor:pointer; display:inline-block; float:right; margin-top:4px; margin-right:10px;" data-filter="{{ . | urlize }}"></li>
+				<li class="article_lang_icon" id="events" name="events_{{ . }}" style="background-image: url('{{ printf "images/icon_%s.png" . | relURL }}');" data-filter="{{ . | urlize }}"></li>
 			  {{ end }}
 			</ul>
 		  </div>
