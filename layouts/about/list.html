@@ -4,55 +4,74 @@
 
 
 <style type="text/css">
-@media (min-width: 200px) and (max-width: 1199px) {
+@media (min-width: 200px) and (max-width: 991px) {
 	#our_value_box_img {
-		height:850px;
-		min-height: 850px;
+		height:350px;
+		min-height: 350px;
+		}
+	#our_value_img {
+		background-position-y:-600px;
 		}
 	#against_value_box_img {
-		height:850px;
-		min-height: 850px;
+		height:350px;
+		min-height: 350px;
+		}
+	#against_value_img
+		{
+		background-position-y:-300px;
+		}
+	}
+@media (min-width: 992px) and (max-width: 1199px) {
+	#our_value_box_img {
+		height:750px;
+		min-height: 750px;
+		}
+	#against_value_box_img {
+		height:750px;
+		min-height: 750px;
+		}
 	}
 @media (min-width: 1200px) and (max-width: 1399px) {
 	#our_value_box_img {
-		height:750px;
-		min-height: 750px;
+		height:680px;
+		min-height: 680px;
 		}
 	#against_value_box_img {
-		height:750px;
-		min-height: 750px;
+		height:670px;
+		min-height: 670px;
 		}
 	}
 @media (min-width: 1400px) and (max-width: 1599px) {
 	#our_value_box_img {
-		height: 650px;
-		min-height: 650px;
+		height: 620px;
+		min-height: 620px;
 		}
 	#against_value_box_img {
-		height: 650px;
-		min-height: 650px;
+		height: 620px;
+		min-height: 620px;
 		}
 	}
 @media (min-width: 1600px) and (max-width: 1699px) {
 	#our_value_box_img {
-		height: 650px;
-		min-height: 650px;
+		height: 600px;
+		min-height: 600px;
 		}
 	#against_value_box_img {
-		height: 650px;
-		min-height: 650px;
+		height: 620px;
+		min-height: 620px;
 		}
 	}
 @media (min-width: 1700px) {
 	#our_value_box_img {
-		height: 600px;
-		min-height: 600px;
+		height: 570px;
+		min-height: 570px;
 		}
 	#against_value_box_img {
 		height: 600px;
 		min-height: 600px;
 		}
 	}
+	
 </style>
 
 <!-- about -->
@@ -117,9 +136,9 @@
   </div>
   <div class="container-fluid p-0">
     <div class="row no-gutters">
-      <div class="col-xl-4 col-lg-5" style=" min-height: 450px;" id="our_value_box_img">
-		<div class="row feature-blocks justify-content-between img_box_left p-0" style="height:100%; padding-left: 0px; padding-right: 0px; margin-top: 50px;">
-      	  <div class="w-100" style=" height: 100%; background-size: cover;  background-image: url('{{ .image | absURL }}'); box-sizing: border-box; background-position: top;"></div>
+      <div class="col-xl-4 col-lg-5" style="" id="our_value_box_img">
+		<div class="row feature-blocks justify-content-between img_box_left p-0" style="height:100%; margin-top: 50px;">
+      	  <div id="our_value_img" class="w-100" style=" height: 100%; background-size: cover;  background-image: url('{{ .image | absURL }}'); box-sizing: border-box; background-position: center;"></div>
 		</div>
       </div>
       <div class="col-xl-8 col-lg-7 " id="our_value_box_text">
@@ -153,20 +172,20 @@
 <!-- banner-contre-valeur -->
 {{ if $data.homepage.banner_against_value.enable }}
 {{ with $data.homepage.banner_against_value }}
-<section class="section" style="">
+<section class="section" style="padding-top:0px;">
   <div class="container">
     <div class="row">
-	  <div class="col-12" style=" padding-top:0px; text-align: right;">
+	  <div class="col-12" style=" padding-top:0px; text-align: left;">
 		<h2>
 			{{ i18n "title_our_against_values" | humanize}}
-				</h2>
+		</h2>
         <p>{{ i18n "text_our_against_values" | humanize }}</p>
 	  </div>
 	</div>
   </div>
   <div class="container-fluid p-0">
     <div class="row no-gutters">
-      <div class="col-xl-8 col-lg-7 " id="our_value_box_text">
+      <div class="col-xl-8 col-lg-7 " id="against_value_box_text">
         <div class="row feature-blocks2 justify-content-between p-5" style="box-sizing:border-box; margin-top:20px;">
           {{ range .feature_item }}
           <div class="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
@@ -187,7 +206,7 @@
       </div>
       <div class="col-xl-4 col-lg-5" style=" min-height: 450px;" id="against_value_box_img">
 		<div class="row feature-blocks justify-content-between img_box_left p-0" style="height:100%; padding-left: 0px; padding-right: 0px; margin-top: 50px;">
-      	  <div class="w-100" style=" height: 100%; background-size: cover;  background-image: url('{{ .image | absURL }}'); box-sizing: border-box; background-position: top;"></div>
+      	  <div id="against_value_img" class="w-100" style=" height: 100%; background-size: cover;  background-image: url('{{ .image | absURL }}'); box-sizing: border-box; background-position: center;"></div>
 		</div>
       </div>
     </div>
