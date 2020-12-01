@@ -5,6 +5,7 @@
 		</a>
 	</div>
 	  <div class="card-body">
+		  <div class="icon_round" style="background-image:url('{{ printf "images/icon_%s.png" .Params.Lang | relURL }}');"></div>
 		<ul class="list-inline mb-2" style="text-align:center;">
 		  <li class="list-inline-item"><i class="ti-calendar"></i> {{ .Params.Duration }}</li>
 		  <li class="list-inline-item"><i class="ti-bookmark-alt"></i> {{ .Params.Category }}</li>
@@ -13,17 +14,11 @@
 			<h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
 		  </center>
 		<p class="card-text mb-4 text-center" style="">{{ .Summary | truncate 100 }}</p>
-		<div class="w-100" style="">
-			<div class="article_lang_box" style="">{{ i18n "langue" }}</div>
-			<div class="article_lang_icon_box" style="">
-				<div class="article_lang_icon" style="background-image:url('{{ printf "images/icon_%s.png" .Params.Lang | relURL }}');"></div>
-			</div>
-		</div>
 	  </div>
 </div>
 <style type="text/css">
  @media (min-width: 200px) and (max-width: 574px) {
-	 
+
 }
  @media (min-width: 575px) and (max-width: 769px) {
 	 .event_image_box {
@@ -39,7 +34,7 @@
 	 .event_image_box {
 		 width: 225px;
 	 }
-	 
+
 }
 
  @media (min-width: 1200px) {
@@ -52,13 +47,15 @@
 /*----------------------------*/
 /* ARTICLES ADDS
 /*----------------------------*/
-.article_lang_box {
-	height: 30px;
-	line-height: 30px;
-	float: left;
-	min-height:30px;
-	display: inline-block;
-	vertical-align: middle;
+.icon_round {
+	width: 20px;
+	height: 20px;
+	border-radius: 15px;
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size:cover;
+	float:right;
+	margin-right:10px;
 }
 .article_lang_icon {
 	width: 30px;
@@ -67,16 +64,9 @@
 	background-repeat:no-repeat;
 	background-position:center;
 	background-size:cover;
-	
 	cursor:pointer;
 	float:right;
 	margin-right:10px;
-}
-.article_lang_icon_box {
-	display: inline-block;
-	float: left;
-	padding-top: 0px;
-	padding-left: 10px;
 }
 .article_lang_all {
 	width:auto;

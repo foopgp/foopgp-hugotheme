@@ -7,13 +7,11 @@
 			<!-- member category list -->
 			<ul class="list-inline text-center filter-controls mb-5">
 			  <li class="article_lang_all" style="" data-filter="all">{{ i18n "all" }}</li>
-			  {{ $categories := slice }}
-			  {{ range .Data.Pages }}
-			  {{ $categories = $categories | append .Params.Lang }}
-			  {{ end }}
-			  {{ range ( $categories | uniq ) }}
-				<li class="article_lang_icon" id="events" name="events_{{ . }}" style="background-image: url('{{ printf "images/icon_%s.png" . | relURL }}');" data-filter="{{ . | urlize }}"></li>
-			  {{ end }}
+				{{ range site.Languages }}
+				{{ $l := lower .LanguageName }}
+				<li class="article_lang_icon" style="background-image: url('{{ printf "images/icon_%s.png" $l | relURL }}');" data-filter="{{ $l | urlize }}"></li>
+				{{ end }}
+			  <li class="article_lang_all mr-4" style="cursor: default"><h4>{{ i18n "language" | title }}</h4></li>
 			</ul>
 		  </div>
 		</div>
