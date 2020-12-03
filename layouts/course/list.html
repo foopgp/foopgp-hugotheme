@@ -9,7 +9,7 @@
 		<ul class="list-inline text-center filter-controls mb-5">
 		  <li class="article_lang_all" data-filter="all">{{ i18n "all" }}</li>
 			{{ range site.Languages }}
-			{{ $l := lower .LanguageName }}
+			{{ $l := substr .LanguageName 0 2 }}
 			<li class="article_lang_icon" style="background-image: url('{{ printf "images/icon_%s.png" $l | relURL }}');" data-filter="{{ $l | urlize }}"></li>
 			{{ end }}
 			<li class="article_lang_all mr-4" style="cursor: default"><h4>{{ i18n "language" | title }}</h4></li>
