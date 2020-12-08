@@ -16,5 +16,6 @@
       <h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
     <p class="card-text">{{ .Summary | truncate 100 }}</p>
     <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">{{ i18n "read_more" }}</a>
+    <div class="icon_round" style="background-image:url('{{ printf "images/i18n/%s-flag-icon.png" ( substr .Params.Lang -1 2 ) | relURL }}');" title="{{ .Params.Lang }}"></div>
   </div>
 </article>
