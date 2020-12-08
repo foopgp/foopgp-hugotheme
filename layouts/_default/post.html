@@ -16,6 +16,8 @@
       <h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
     <p class="card-text">{{ .Summary | truncate 100 }}</p>
     <a href="{{ .Permalink }}" class="btn btn-primary btn-sm">{{ i18n "read_more" }}</a>
+    {{ if ne ( substr .Params.Lang 0 2 ) ( substr .Lang 0 2 ) }}
     <div class="icon_round" style="background-image:url('{{ printf "images/i18n/%s-flag-icon.png" ( substr .Params.Lang -1 2 ) | relURL }}');" title="{{ .Params.Lang }}"></div>
+    {{ end }}
   </div>
 </article>
