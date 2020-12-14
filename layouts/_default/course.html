@@ -5,7 +5,9 @@
 		</a>
 	</div>
 	  <div class="card-body">
+		{{ if ne ( substr .Params.Lang 0 2 ) ( substr .Lang 0 2 ) }}
 		  <div class="icon_round" style="background-image:url('{{ printf "images/i18n/%s-flag-icon.png" ( substr .Params.Lang -1 2 ) | relURL }}');" title="{{ .Params.Lang }}"></div>
+		{{ end }}
 		<ul class="list-inline mb-2" style="text-align:center;">
 		  <li class="list-inline-item"><i class="ti-calendar"></i> {{ .Params.Duration }}</li>
 		  <li class="list-inline-item"><i class="ti-bookmark-alt"></i> {{ .Params.Category }}</li>
@@ -16,80 +18,3 @@
 		<p class="card-text mb-4 text-center" style="">{{ .Summary | truncate 100 }}</p>
 	  </div>
 </div>
-<style type="text/css">
- @media (min-width: 200px) and (max-width: 574px) {
-
-}
- @media (min-width: 575px) and (max-width: 769px) {
-	 .event_image_box {
-		 width: 170px;
-	 }
-}
- @media (min-width: 770px) and (max-width: 989px) {
-	 .event_image_box {
-		 width: 265px;
-	 }
-}
- @media (min-width: 990px) and (max-width: 1199px) {
-	 .event_image_box {
-		 width: 225px;
-	 }
-
-}
-
- @media (min-width: 1200px) {
-	 .event_image_box {
-		 width: 275px;
-	 }
-}
-	
-	
-/*----------------------------*/
-/* ARTICLES ADDS
-/*----------------------------*/
-.icon_round {
-	width: 20px;
-	height: 20px;
-	border-radius: 10px;
-	background-repeat:no-repeat;
-	background-position:center;
-	background-size:cover;
-	float:right;
-	margin-right:10px;
-}
-.article_lang_icon {
-	width: 30px;
-	height: 30px;
-	border-radius: 15px;
-	background-repeat:no-repeat;
-	background-position:center;
-	background-size:cover;
-	cursor:pointer;
-	float:right;
-	margin-right:10px;
-}
-.article_lang_all {
-	width:auto;
-	min-height:30px;
-	height: 30px;
-	line-height: 30px;
-	cursor:pointer;
-	display:inline-block;
-	float:right;
-	margin-right:10px;
-	margin-top: 4px;
-}
-
-
-/*----------------------------*/
-/* EVENTS ADDS
-/*----------------------------*/
-.event_image_box {
-	width:275px;
-	height: 104px;
-	display: inline-block;
-	float:right;
-	overflow: hidden;
-}
-
-</style>
