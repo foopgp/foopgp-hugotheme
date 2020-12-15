@@ -5,24 +5,11 @@
   <div class="container">
     <div class="row">
       <div id="bcontent" class="col-lg-8 order-2 order-lg-1">
-		<div class="row">
-		  <div class="col-12">
-			<!-- member category list -->
-			<ul class="list-inline text-center filter-controls mb-5">
-			  <li class="article_lang_all" style="" data-filter="all">{{ i18n "all" }}</li>
-				{{ range site.Languages }}
-				{{ $l := substr .LanguageName 0 2 }}
-				<li class="article_lang_icon" style="background-image: url('{{ printf "images/i18n/%s-flag-icon.png" $l | relURL }}');" data-filter="{{ $l | urlize }}"></li>
-				{{ end }}
-			  <li class="article_lang_all mr-4" style="cursor: default"><h4>{{ i18n "language" | title }}</h4></li>
-			</ul>
-		  </div>
-		</div>
-        <div class="row filtr-container">
+        <div class="row">
           <!-- blog post -->
           {{ $paginator := .Paginate ( where .Data.Pages "Type" "post") }}
           {{ range $paginator.Pages }}
-          <div class="col-sm-6 mb-5 filtr-item"  data-category="{{ substr .Params.Lang 0 2 | urlize }}"  data-lang="{{ substr .Params.Lang 0 2 }}">
+          <div class="col-sm-6 mb-5">
             <article
               class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
               <a href="{{ .Permalink }}"><img class="card-img-top rounded-0" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}"></a>
