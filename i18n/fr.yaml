@@ -1,0 +1,126 @@
+- id: all
+  translation: Tous
+
+- id: apply_now
+  translation: Postuler maintenant
+
+- id: call
+  translation: appeler
+
+- id: categories
+  translation: Catégories
+
+- id: contact_info
+  translation: Info de contact
+
+- id: contact_us
+  translation: Nous joindre
+
+- id: date
+  translation: Date
+
+- id: donate_texte_main
+  translation: ""
+
+- id: donate_texte_type
+  translation: ""
+
+- id: donate_titre_main
+  translation: "Faire un don à Foopgp"
+
+- id: download
+  translation: Télécharger
+
+- id: duration
+  translation: durée
+
+- id: email
+  translation: courriel
+
+- id: enter_email
+  translation: Entrez votre courriel…
+
+- id: event_speaker
+  translation: Présentat(eur|rice)
+
+- id: event_speakers
+  translation: Présentat(eur|rice)s
+
+- id: how_much
+  translation: combien
+
+- id: interest
+  translation: RÉSUMÉ DES ACTIVITÉS/INTÉRÊTS
+
+- id: join
+  translation: S’abonner
+
+- id: language
+  translation: "langue"
+
+- id: latest_article
+  translation: Derniers contenus
+
+- id: latest_documents
+  translation: derniers documents
+
+- id: links
+  translation: liens
+
+- id: members
+  translation: membres
+
+- id: more_event
+  translation: Plus d’événements
+
+- id: organization
+  translation: organisation
+
+- id: posted_by
+  translation: Publié par
+
+- id: read_more
+  translation: Lire la suite
+
+- id: related_course
+  translation: Cours lié
+
+- id: see_all
+  translation: Tout voir
+
+- id: send
+  translation: envoyer
+
+- id: subscribe_newsletter
+  translation: Abonnement à l’infolettre
+
+- id: tags
+  translation: Étiquettes
+
+- id: text_our_against_values
+  translation: ""
+
+- id: text_our_values
+  translation: ""
+
+- id: title_our_against_values
+  translation: "Contre Valeurs"
+
+- id: title_our_values
+  translation: "Nos Valeurs"
+
+- id: trainings
+  translation: formations
+
+- id: when
+  translation: quand
+
+- id: where
+  translation: où
+
+- id: who
+  translation: qui
+
+- id: workshops
+  translation: ateliers
+
