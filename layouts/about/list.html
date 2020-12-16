@@ -216,26 +216,26 @@
 {{ end }}
 <!-- /banner-contre-valeur -->
 
-<!-- member -->
+<!-- partner -->
 {{ if $data.homepage.blog.enable }}
 <section class="section">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="section-title">{{ i18n "members" | humanize }}</h2>
+        <h2 class="section-title">{{ i18n "partners" | humanize }}</h2>
       </div>
     </div>
     <div class="row justify-content-center">
-      <!-- member -->
-      {{ range first 3 (where site.RegularPages "Type" "member")}}
+      <!-- partner -->
+      {{ range first 3 (where site.RegularPages "Type" "partner")}}
       <div class="col-lg-4 col-sm-6 mb-5 mb-lg-0">
-        {{ .Render "member" }}
+        {{ .Render "partner" }}
       </div>
       {{ end }}
     </div>
   </div>
 </section>
 {{ end }}
-<!-- /member -->
+<!-- /partner -->
 
 {{ end }}

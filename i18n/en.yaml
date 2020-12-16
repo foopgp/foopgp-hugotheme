@@ -67,14 +67,17 @@
 - id: links
   translation: links
 
-- id: members
-  translation: members
-
 - id: more_event
   translation: More Events
 
 - id: organization
   translation: organization
+
+- id: partner
+  translation: partner
+
+- id: partners
+  translation: partners
 
 - id: posted_by
   translation: Posted by
