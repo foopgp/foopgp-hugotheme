@@ -24,7 +24,7 @@
   {{ end }}
   {{ end }}
   <!-- footer content -->
-  <div class="footer bg-footer section border-bottom text-light">
+  <div class="footer bg-footer border-bottom text-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
@@ -58,18 +58,18 @@
         </div>
         <!-- support -->
         <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
-          <h4 class="text-white mb-5 text-uppercase">{{ i18n "trainings" }} &amp; {{ i18n "workshops" }}</h4>
+          <h4 class="text-white mb-5 text-uppercase">{{ i18n "events" }}</h4>
           <ul class="list-unstyled">
-            {{ range first 5 (where site.RegularPages "Type" "course")}}
+            {{ range first 5 (where site.RegularPages "Type" "event")}}
             <li class="mb-3"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
             {{ end }}
           </ul>
         </div>
         <!-- support -->
         <div class="col-lg-2 col-sm-4 col-6 mb-5 mb-md-0">
-          <h4 class="text-white mb-5 text-uppercase">{{ i18n "latest_documents" }}</h4>
+          <h4 class="text-white mb-5 text-uppercase">{{ i18n "latest_content" }}</h4>
           <ul class="list-unstyled">
-            {{ range first 3 (where site.RegularPages "Type" "notice")}}
+            {{ range first 3 (where (where site.RegularPages "Type" "post") "Params.lang" $.Lang ) }}
             <li class="mb-3"><a href="{{ .Permalink }}">{{ .Title }}</a></li>
             {{ end }}
           </ul>
@@ -78,7 +78,7 @@
     </div>
   </div>
   <!-- copyright -->
-  <div class="copyright py-4 bg-footer">
+  <div class="copyright py-2 bg-footer">
     <div class="container">
       <div class="row">
         <div class="col-sm-7 text-sm-left text-center">

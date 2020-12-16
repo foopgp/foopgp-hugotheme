@@ -58,11 +58,8 @@
 - id: language
   translation: "language"
 
-- id: latest_article
-  translation: Latest content
-
-- id: latest_documents
-  translation: latest documents
+- id: latest_content
+  translation: latest content
 
 - id: links
   translation: links
