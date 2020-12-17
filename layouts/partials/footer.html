@@ -31,9 +31,9 @@
           <!-- logo -->
           <a class="logo-footer" href="{{ site.BaseURL | relLangURL }}"><img class="img-fluid mb-4" src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}"></a>
           <ul class="list-unstyled">
-            <li class="mb-4">{{ site.Params.address | markdownify }}</li>
-            <li class="mb-4"><a class="text-color" href="mailto:{{ site.Params.email }}">{{ site.Params.email | markdownify }}</a></li>
-            <li class="mb-4"><a href="tel:{{ site.Params.mobile }}" class="text-color h5 d-block">{{ site.Params.mobile | markdownify }}</a></li>
+            {{ range site.Params.social }}
+	    <li class="mb-2"><a class="text-color h6 d-block" href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i> {{ .title | title }}</a></li>
+            {{ end }}
           </ul>
         </div>
         <!-- company -->
@@ -87,7 +87,7 @@
         <div class="col-sm-5 text-sm-right text-center">
           <ul class="list-inline">
             {{ range site.Params.social }}
-            <li class="list-inline-item"><a class="d-inline-block p-2" href="{{ .link | safeURL }}"><i class="{{ .icon }} text-primary"></i></a></li>
+	    <li class="list-inline-item"><a class="d-inline-block p-2" href="{{ .link | safeURL }}" title="{{ .title }}"><i class="{{ .icon }} text-primary"></i></a></li>
             {{ end }}
           </ul>
         </div>
