@@ -32,7 +32,7 @@
           <a class="logo-footer" href="{{ site.BaseURL | relLangURL }}"><img class="img-fluid mb-4" src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}"></a>
           <ul class="list-unstyled">
             {{ range site.Params.social }}
-	    <li class="mb-2"><a class="text-color h6 d-block" href="{{ .link | safeURL }}"><i class="{{ .icon }}"></i> {{ .title | title }}</a></li>
+	    <li class="mb-2"><a class="text-color h6 d-block" href="{{ .link | safeURL | absLangURL }}"><i class="{{ .icon }}"></i> {{ i18n .title | title }}</a></li>
             {{ end }}
           </ul>
         </div>
@@ -87,7 +87,7 @@
         <div class="col-sm-5 text-sm-right text-center">
           <ul class="list-inline">
             {{ range site.Params.social }}
-	    <li class="list-inline-item"><a class="d-inline-block p-2" href="{{ .link | safeURL }}" title="{{ .title }}"><i class="{{ .icon }} text-primary"></i></a></li>
+	    <li class="list-inline-item"><a class="d-inline-block p-2" href="{{ .link | safeURL | absLangURL }}" title="{{ i18n .title }}"><i class="{{ .icon }} text-primary"></i></a></li>
             {{ end }}
           </ul>
         </div>
