@@ -10,6 +10,10 @@
   }
 }
 
+.hzoom14:hover {
+transform: scale(1.4);
+}
+
 .navigation {
   transition: .2s ease;
 
@@ -24,7 +28,6 @@
 }
 
 .navbar-nav {
-  padding-left: 50px;
 
   @include desktop {
     padding-left: 0;

@@ -87,7 +87,7 @@
         <div class="col-sm-5 text-sm-right text-center">
           <ul class="list-inline">
             {{ range site.Params.social }}
-	    <li class="list-inline-item"><a class="d-inline-block p-2" href="{{ .link | safeURL | relLangURL }}" title="{{ i18n .title }}"><i class="{{ .icon }} text-primary"></i></a></li>
+	    <li class="list-inline-item"><a class="d-inline-block p-2 hzoom14" href="{{ .link | safeURL | relLangURL }}" title="{{ i18n .title }}"><i class="{{ .icon }} text-primary"></i></a></li>
             {{ end }}
           </ul>
         </div>

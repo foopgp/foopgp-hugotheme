@@ -28,16 +28,16 @@
   {{ end }}
   <!-- navbar -->
   <div class="navigation w-100 {{ if site.Params.top_header }} top-hider {{ end }}">
-    <div class="container">
       <nav class="navbar navbar-expand-lg navbar-dark p-0">
-        <a class="navbar-brand mr-1" href="{{ site.BaseURL | relLangURL }}"><img class="img-fluid"
-            src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}"></a>
-        <button class="navbar-toggler rounded-0 px-2" type="button" data-toggle="collapse" data-target="#navigation"
+        <a class="navbar-brand ml-4 ml-lg-0 ml-xl-5" href="{{ site.BaseURL | relLangURL }}"><img class="img-fluid"
+            src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" title="{{ site.Params.Home }}" style="max-height: 60px;"></a>
+        <button class="navbar-toggler rounded-0 px-2 mr-4" type="button" data-toggle="collapse" data-target="#navigation"
           aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse text-center" id="navigation">
+          <!-- site.Menus -->
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="{{ site.BaseURL | relLangURL }}">{{ site.Params.Home }}</a>
@@ -83,9 +83,16 @@
             {{ end }}
           </select>
           {{ end }}
+
+          <!-- site.Params.social -->
+	  <div class="mx-lg-1 ml-xl-4 mr-xl-5 my-3 d-lg-flex">
+            {{ range site.Params.social }}
+	    <li class="list-inline-item ml-xl-1"><a class="d-inline-block text-primary hzoom14" href="{{ .link | safeURL | relLangURL }}" title="{{ i18n .title }}"><i class="{{ .icon }}"></i></a></li>
+            {{ end }}
+          </div>
+
         </div>
       </nav>
-    </div>
   </div>
 </header>
 <!-- /header -->
