@@ -64,7 +64,7 @@
 
           <!-- Language List -->
           {{ if .IsTranslated }}
-          <select class="m-2 border-0" id="select-language" onchange="location = this.value;" style="background-color:#fff8;">
+          <select class="m-2 border-0" id="select-language" onchange="location = this.value;" style="background-color:#fff4; -webkit-appearance: none; -moz-appearance: none; appearance: none;">
             {{ $siteLanguages := site.Languages}}
             {{ $pageLang := .Page.Lang}}
             {{ range .Page.AllTranslations }}
