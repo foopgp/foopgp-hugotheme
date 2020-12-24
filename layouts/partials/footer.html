@@ -86,7 +86,6 @@
         </div>
         <div class="col-sm-5 text-sm-right text-center">
           <ul class="list-inline">
-	    <li class="list-inline-item"><a class="d-inline-block p-2 hzoom14" href="tel:+33612345678" title="test"><i class="ti-share text-primary"></i></a></li>
             {{ range site.Params.social }}
 	    <li class="list-inline-item"><a class="d-inline-block p-2 hzoom14" href="{{ .link | safeURL | relLangURL | replaceRE "^.*/(mailto:.+)$" "$1" }}" title="{{ i18n .title }}"><i class="{{ .icon }} text-primary"></i></a></li>
             {{ end }}
