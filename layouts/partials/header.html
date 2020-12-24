@@ -87,7 +87,7 @@
           <!-- site.Params.social -->
 	  <div class="mx-lg-1 ml-xl-4 mr-xl-5 my-3 d-lg-flex">
             {{ range site.Params.social }}
-	    <li class="list-inline-item ml-xl-1"><a class="d-inline-block text-primary hzoom14" href="{{ .link | safeURL | relLangURL }}" title="{{ i18n .title }}"><i class="{{ .icon }}"></i></a></li>
+	    <li class="list-inline-item ml-xl-1"><a class="d-inline-block text-primary hzoom14" href="{{ .link | safeURL | relLangURL | replaceRE "^.*/(mailto:.+)$" "$1" }}" title="{{ i18n .title }}"><i class="{{ .icon }}"></i></a></li>
             {{ end }}
           </div>
 
