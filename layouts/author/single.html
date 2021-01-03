@@ -31,6 +31,8 @@
 	</div>
 </section>
 
+{{ $posts := where site.RegularPages "Params.author" .Title }}
+{{ if len $posts }}
 <section class="section">
 	<div class="container">
 		<div class="row">
@@ -39,7 +41,7 @@
 					<h2 class="section-title">{{ i18n "posted_by" }} {{ .Title }}</h2>
 				</div>
 			</div>
-			{{ range where site.RegularPages "Params.author" .Title }}
+			{{ range $posts }}
 			<div class="col-lg-4 col-sm-6 mb-4">
 				{{ .Render "post" }}
 			</div>
@@ -47,4 +49,6 @@
 		</div>
 	</div>
 </section>
+{{ end }}
+
 {{ end }}
