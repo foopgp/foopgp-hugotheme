@@ -104,10 +104,10 @@
   translation: ""
 
 - id: title_our_against_values
-  translation: "Contre Valeurs"
+  translation: "contre-valeurs"
 
 - id: title_our_values
-  translation: "Nos Valeurs"
+  translation: "nos valeurs"
 
 - id: trainings
   translation: formations
