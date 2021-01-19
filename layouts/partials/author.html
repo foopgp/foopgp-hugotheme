@@ -1,0 +1,25 @@
+{{ "<!-- author -->" | safeHTML }}
+{{ if .Params.Author }}
+	{{ if .Scratch.Get "keytype" }}
+		<li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">{{ i18n "posted_by" }} :</span>
+		{{ .Scratch.Delete "keytype" }}
+	{{ else }}
+		<li class="list-inline-item mr-3 ml-0"><i class="ti-user"></i>
+	{{ end }}
+	{{ if (reflect.IsSlice .Params.Author) }}
+		{{ range $index, $elements:= .Params.Author }}{{ if ne $index 0 }}, {{ end }}
+			{{ if ( printf "%s/author/%s.md" $.Site.Language.ContentDir ( . | urlize | title ) | fileExists ) }}
+				<a href="{{ `author/` | relLangURL }}{{ . | urlize }}">{{ . | title }}</a>
+			{{ else }}
+				{{ . | markdownify }}
+			{{ end }}
+		{{ end }}
+	{{ else }}
+		{{ if ( printf "%s/author/%s.md" $.Site.Language.ContentDir ( .Params.Author | urlize | title ) | fileExists ) }}
+			<a href="{{ `author/` | relLangURL }}{{ .Params.Author | urlize }}">{{ .Params.Author | title }}</a>
+		{{ else }}
+			{{ .Params.Author | markdownify }}
+		{{ end }}
+	{{ end }}
+	</li>
+{{ end }}

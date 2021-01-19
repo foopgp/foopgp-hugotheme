@@ -32,6 +32,7 @@
 </section>
 
 {{ $posts := where site.RegularPages "Params.author" .Title }}
+{{ $posts := $posts | union ( where site.RegularPages "Params.author" "intersect" (slice .Title) ) }}
 {{ if len $posts }}
 <section class="section">
 	<div class="container">
