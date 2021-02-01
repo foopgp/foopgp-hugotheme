@@ -11,7 +11,7 @@
 	</div>
 	<div class="card-body">
 		{{ if ne ( substr .Params.Lang 0 2 ) ( substr .Lang 0 2 ) }}
-		<div class="icon_round" style="background-image:url('{{ printf "images/i18n/%s-flag-icon.png" ( substr .Params.Lang -1 2 ) | relURL }}');" title="{{ .Params.Lang }}"></div>
+		<div class="icon_round" style="background-image:url('{{ printf "images/i18n/%s-flag-icon.png" ( substr .Params.Lang 0 2 ) | relURL }}');" title="{{ .Params.Lang }}"></div>
 		{{ end }}
 		<!-- location -->
 		<p><i class="ti-location-pin text-primary mr-2"></i>{{ .Params.Location | markdownify }}</p>
