@@ -1,17 +1,28 @@
 {{ define "main" }}
 
-<!-- research -->
+<!-- solutions -->
 <section class="section">
   <div class="container">
     <div class="row">
       {{ range .Data.Pages}}
       <!-- recharch item -->
       <div class="col-lg-4 col-sm-6 mb-4">
-        {{ .Render "research" }}</div>
+	<div class="card rounded-0 hover-shadow border-top-0 border-left-0 border-right-0 p-3" style="margin-top:50px;">
+		<div class="text-center" >
+			<a href="{{ .Permalink }}">
+			<img class="card-img-top rounded-0 w-50" src="{{ .Params.Image | relURL }}" alt="{{ .Title }}">
+			</a>
+		</div>
+	  <div class="card-body text-center">
+	    <h4 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+	    <p class="card-text">{{ .Summary | truncate 100 }}</p>
+	  </div>
+	</div>
+      </div>
       {{ end }}
     </div>
   </div>
 </section>
-<!-- /research -->
+<!-- /solutions -->
 
 {{ end }}
