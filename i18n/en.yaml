@@ -19,15 +19,6 @@
 - id: date
   translation: Date
 
-- id: donate_texte_main
-  translation: ""
-
-- id: donate_texte_type
-  translation: ""
-
-- id: donate_titre_main
-  translation: "Donate to Foopgp"
-
 - id: download
   translation: Download
 
