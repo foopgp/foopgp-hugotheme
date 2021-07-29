@@ -39,8 +39,13 @@
         <div class="collapse navbar-collapse text-center" id="navigation">
           <!-- site.Menus -->
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{{ site.BaseURL | relLangURL }}">{{ site.Params.Home }}</a>
+            <li>
+		<form action="/search/">
+			<div class="input-group px-4 px-lg-0">
+				<input type="search" class="form-control rounded text-center text-dark px-1" style="background-color:#EEE8" placeholder="Search" name="s">
+				<button class="btn btn-outline-primary px-3 px-lg-1 px-xl-3 rounded" type="submit">🔍</button>
+			</div>
+		</form>
             </li>
             {{ range site.Menus.main }}
             {{ if .HasChildren }}
