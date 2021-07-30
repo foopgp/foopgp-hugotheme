@@ -15,10 +15,15 @@ Search depends on additional output content type of JSON in *config.toml*:
   home = ["HTML", "JSON"]
 ```
 
+Set your *search* URL
+```
+[params]
+searchURL = "/search"
+```
 
 # Create a *.../search* URL
 
-Create *search.md* file(s) somewhere under the *content/* directory with such yaml header:
+Create *search.md* file(s) where you specified previously under the *content/* directory with such yaml header:
 
 ```md
 ---

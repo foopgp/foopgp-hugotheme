@@ -40,9 +40,9 @@
           <!-- site.Menus -->
           <ul class="navbar-nav ml-auto">
             <li>
-		    <form action="{{ "/search/" | absLangURL }}">
+		    <form action="{{ site.Params.searchURL | absLangURL }}">
 			<div class="input-group px-4 px-lg-0">
-				<input type="search" class="form-control rounded text-center text-dark px-1" style="background-color:#EEE8" placeholder="{{ i18n "search..." | humanize }}" name="s">
+				<input type="search" class="form-control rounded text-center text-dark px-1" style="background-color:#EEE8" placeholder="{{ i18n "search..." | humanize }}" name="q">
 				<button class="btn btn-outline-primary px-3 px-lg-1 px-xl-3 rounded" type="submit">🔍</button>
 			</div>
 		</form>

@@ -1,11 +1,10 @@
 {{ define "main" }}
 <section class="resume-section p-3 p-lg-5 d-flex flex-column">
   <div class="my-auto" >
-    <form action="{{ "search" | absLangURL }}" onkeyup="executeInlineSearch()">
-	    <input id="search-query" placeholder="{{ i18n "search..." | humanize }}" name="s" autocomplete="off" search autofocus/>
+    <form action="{{ site.Params.searchURL | absLangURL }}" onkeyup="executeInlineSearch()">
+	    <input id="search-query" placeholder="{{ i18n "search..." | humanize }}" name="q" autocomplete="on" search autofocus/>
     </form>
-    <div id="search-results">
-     <h3 class="search-results-title">Matching pages</h3>
+    <div class="mt-4" id="search-results">
     </div>
   </div>
 </section>

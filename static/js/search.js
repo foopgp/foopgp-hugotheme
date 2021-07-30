@@ -16,7 +16,7 @@ var fuseOptions = {
   ]
 };
 
-var searchQuery = param("s");
+var searchQuery = param("q");
 
 var jsonfile = document.currentScript.dataset.jsonfile;
 if (typeof jsonfile === "undefined" ) {
@@ -92,12 +92,20 @@ function populateResults(result){
       //replace values
       var tags = ""
       if (value.item.tags){
+          var tags = "tags: "
           value.item.tags.forEach(function(element) {
-              tags = tags + "<a href='/tags/"+ element +"'>" + "#" + element + "</a> " 
+              tags = tags + " <a href='/tags/"+ element +"/#bcontent'>#" + element + "</a> "
+          });
+      }
+      var categories = ""
+      if (value.item.categories){
+          value.item.categories.forEach(function(element) {
+              categories = categories + "<a href='/categories/"+ element +"/#bcontent'>" + element + "</a> "
           });
       }
 
-    var output = render(templateDefinition,{key:key,title:value.item.title,link:value.item.permalink,tags:tags,categories:value.item.categories,snippet:snippet});
+
+    var output = render(templateDefinition,{key:key,title:value.item.title,link:value.item.permalink,tags:tags,categories:categories,snippet:snippet});
     $('#search-results').append(output);
 
     /*$.each(snippetHighlights,function(snipkey,snipvalue){
