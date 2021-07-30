@@ -92,15 +92,15 @@ function populateResults(result){
       //replace values
       var tags = ""
       if (value.item.tags){
-          var tags = "tags: "
+          var tags = "#"
           value.item.tags.forEach(function(element) {
-              tags = tags + " <a href='/tags/"+ element +"/#bcontent'>#" + element + "</a> "
+              tags = tags + " <a href='/tags/"+ element +"/#bcontent'><i>" + element + "</i></a> #"
           });
       }
       var categories = ""
       if (value.item.categories){
           value.item.categories.forEach(function(element) {
-              categories = categories + "<a href='/categories/"+ element +"/#bcontent'>" + element + "</a> "
+              categories = categories + " <a href='/categories/"+ element +"/#bcontent'><b>" + element + "</b></a> "
           });
       }
 
