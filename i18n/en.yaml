@@ -76,6 +76,9 @@
 - id: related_course
   translation: Related Course
 
+- id: "search..."
+  translation: "search ..."
+
 - id: see_all
   translation: See all
 
