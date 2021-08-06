@@ -32,7 +32,7 @@
           <a class="logo-footer" href="{{ site.BaseURL | relLangURL }}"><img class="img-fluid mb-4" src="{{ site.Params.logo | absURL }}" alt="{{ site.Title }}" title="{{ site.Params.Home }}"></a>
           <ul class="list-unstyled" style="columns: 2; -webkit-columns: 2; -moz-columns: 2">
             {{ range site.Params.social }}
-	    <li class="mb-2"><a class="text-color h6 d-block" href="{{ .link | safeURL | relLangURL | replaceRE "^.*/(mailto:.+)$" "$1" }}"><i class="{{ .icon }}"></i> {{ i18n .title | title }}</a></li>
+	    <li class="mb-2"><a class="text-color h6 d-block" href="{{ .link | safeURL | relLangURL | replaceRE "^.*/(mailto:.+)$" "$1" }}"><i class="{{ .icon }}"></i> {{ cond (le (i18n .title | len) 0) .title (i18n .title) | title }}</a></li>
             {{ end }}
           </ul>
         </div>
@@ -87,7 +87,7 @@
         <div class="col-sm-5 text-sm-right text-center">
           <ul class="list-inline">
             {{ range site.Params.social }}
-	    <li class="list-inline-item"><a class="d-inline-block p-2 hzoom14" href="{{ .link | safeURL | relLangURL | replaceRE "^.*/(mailto:.+)$" "$1" }}" title="{{ i18n .title }}"><i class="{{ .icon }} text-primary"></i></a></li>
+	    <li class="list-inline-item"><a class="d-inline-block p-2 hzoom14" href="{{ .link | safeURL | relLangURL | replaceRE "^.*/(mailto:.+)$" "$1" }}" title="{{ cond (le (i18n .title | len) 0) .title (i18n .title) }}"><i class="{{ .icon }} text-primary"></i></a></li>
             {{ end }}
           </ul>
         </div>
