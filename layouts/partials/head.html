@@ -29,8 +29,7 @@
   {{ $styles := resources.Get "scss/style.scss" | toCSS }}
   <link rel="stylesheet" href="{{ $styles.Permalink }}" media="screen">
 
-  {{ "<!--Favicon-->" | safeHTML }}
-  <link rel="shortcut icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
-  <link rel="icon" href="{{ `images/favicon.png` | absURL }}" type="image/x-icon">
+  {{ "<!-- Favicon https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types#icon -->" | safeHTML }}
+  <link rel="icon" href="{{ "favicon.ico" | absURL }}" type="image/x-icon">
 
 </head>
