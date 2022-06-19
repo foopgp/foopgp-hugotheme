@@ -31,6 +31,9 @@
 - id: enter_email
   translation: Entrez votre courriel…
 
+- id: events
+  translation: évènements
+
 - id: event_speaker
   translation: Présentat(eur|rice)
 

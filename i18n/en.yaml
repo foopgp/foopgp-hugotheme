@@ -31,6 +31,9 @@
 - id: enter_email
   translation: Enter your email…
 
+- id: events
+  translation: events
+
 - id: event_speaker
   translation: Event Speaker
 
