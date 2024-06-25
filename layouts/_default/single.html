@@ -8,7 +8,9 @@
         <div class="row">
           <div class="col-12 mb-4 content">
 	{{ if .Params.Image }}
-            <img src="{{ .Params.Image | relURL }}" alt="blog-thumb" style="max-height: 480px">
+  <img src="{{ .Params.Image | relURL }}" alt="blog-thumb" style="max-width: 35%; height: auto;">
+
+
 	{{ end }}
           </div>
           <div class="col-12">
